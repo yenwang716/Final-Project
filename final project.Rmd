@@ -1,0 +1,40 @@
+---
+title: "Final_Project"
+author: "Yen Wang and Nathan Frank"
+date: "5/2/2022"
+output: html_document
+---
+
+Final Project
+Yen Wang and Nathan Frank
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rvest)
+library(tidyverse)
+library(lubridate)
+```
+
+1.US minimum Wage by State from 1968 to 2017 https://www.kaggle.com/datasets/lislejoem/us-minimum-wage-by-state-from-1968-to-2017
+This data set lists the minimum wage in every state in the U.S. from 1968 until 2017.
+
+2.U.S. Inflation Rate 1960-2022
+https://www.macrotrends.net/countries/USA/united-states/inflation-rate-cpi
+This website shows the inflation rate in the United States in a similar time period as our first data set.
+
+Cleaning: The firs tdata set includes U.S. territories such as Puerto Rico and the U.S. Virgin Islands which will not be included since we are only looking at states on our maps.
+
+```{r}
+mwd <- read.csv("Minimum Wage Data.csv")
+url = "https://www.macrotrends.net/countries/USA/united-states/inflation-rate-cpi"
+html <- read_html(url)
+tables = html %>% html_table(fill = TRUE)
+rl = tables[[2]]
+head(mwd)
+names(rl)[1] = "Year"
+names(rl)[2] = "Inflation Rate (%)"
+names(rl)[3] = "Annual Change"
+rl1 <- rl[-c(1), ]
+head(rl1)
+```
+
