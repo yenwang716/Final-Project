@@ -26,15 +26,73 @@ Cleaning: The firs tdata set includes U.S. territories such as Puerto Rico and t
 
 ```{r}
 mwd <- read.csv("Minimum Wage Data.csv")
+mwd = mwd %>% filter(State != "Puerto Rico")
+mwd = mwd %>% filter(State != "U.S. Virgin Islands")
+head(mwd)
+
 url = "https://www.macrotrends.net/countries/USA/united-states/inflation-rate-cpi"
 html <- read_html(url)
 tables = html %>% html_table(fill = TRUE)
 rl = tables[[2]]
-head(mwd)
 names(rl)[1] = "Year"
 names(rl)[2] = "Inflation Rate (%)"
 names(rl)[3] = "Annual Change"
 rl1 <- rl[-c(1), ]
 head(rl1)
 ```
+
+```{r}
+str(mwd)
+str(rl1)
+rl2 = rl1 %>% mutate(`Inflation Rate (%)` = parse_number(`Inflation Rate (%)`), 
+               `Annual Change` = parse_number(`Annual Change`), 
+               Year = as.factor(Year))
+mwd = mwd %>% mutate(Year = as.factor(Year))
+
+```
+
+
+## The average minimum wage of every state through out the years
+```{r}
+mwd.state = mwd %>% group_by(State) %>% 
+  summarise(m.state = mean(State.Minimum.Wage.2020.Dollars, na.rm = TRUE)) %>%
+  arrange(desc(m.state))
+
+mwd.state %>% ggplot(aes(x = State)) + 
+  geom_bar(aes(weight = m.state)) + 
+  coord_flip() + 
+  ylab("State Minimum Wage")
+
+```
+
+## The average minimum wage through out the years
+
+```{r}
+mwd.year = mwd %>% group_by(Year) %>% 
+  summarise(m.year = mean(State.Minimum.Wage, na.rm = TRUE), 
+            m.year.2020 = mean(State.Minimum.Wage.2020.Dollars, na.rm = TRUE))
+
+mwd.year %>% ggplot(aes(x = Year)) + 
+  geom_bar(aes(weight = m.year)) + 
+  coord_flip() + 
+  ylab("State Minimum Wage")
+
+mwd.year %>% ggplot(aes(x = Year)) + 
+  geom_bar(aes(weight = m.year.2020)) + 
+  coord_flip() + 
+  ylab("State Minimum Wage in 2020 Dollars")
+
+
+
+```
+
+```{r}
+mwd.enforced = mwd %>% group_by(State) %>% 
+  summarise(m.high = mean(Department.Of.Labor.Cleaned.High.Value.2020.Dollars, na.rm = TRUE), 
+            m.low = mean(Department.Of.Labor.Cleaned.Low.Value.2020.Dollars, na.rm = TRUE))
+
+head(mwd.enforced)
+```
+
+
 
