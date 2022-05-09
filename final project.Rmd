@@ -18,6 +18,10 @@ library(lubridate)
 library(maps)
 ```
 
+Research Questions:
+  1. How does minimum wage compare across the United States?
+  2. Is the minimum wage in the United States keeping up with inflation?
+
 1.US minimum Wage by State from 1968 to 2017 https://www.kaggle.com/datasets/lislejoem/us-minimum-wage-by-state-from-1968-to-2017
 This data set lists the minimum wage in every state in the U.S. from 1968 until 2017.
 
@@ -55,7 +59,7 @@ mwd = mwd %>% mutate(Year = as.factor(Year))
 ```
 
 ```{r}
-mwd %>% ggplot(aes(x = State.Minimum.Wage)) + geom_histogram() + xlab("State Minimum Wage")
+mwd %>% ggplot(aes(x = State.Minimum.Wage)) + geom_histogram() + labs(title="Minimum Wage of States", x="State Minimum Wage")
 
 
 ```
