@@ -1,0 +1,432 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\title{Final\_Project}
+\author{Yen Wang and Nathan Frank}
+\date{5/2/2022}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Final\_Project},
+  pdfauthor={Yen Wang and Nathan Frank},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+Final Project Yen Wang and Nathan Frank
+
+1.US minimum Wage by State from 1968 to 2017
+\url{https://www.kaggle.com/datasets/lislejoem/us-minimum-wage-by-state-from-1968-to-2017}
+This data set lists the minimum wage in every state in the U.S. from
+1968 until 2017.
+
+2.U.S. Inflation Rate 1960-2022
+\url{https://www.macrotrends.net/countries/USA/united-states/inflation-rate-cpi}
+This website shows the inflation rate in the United States in a similar
+time period as our first data set.
+
+Cleaning: The firs tdata set includes U.S. territories such as Puerto
+Rico and the U.S. Virgin Islands which will not be included since we are
+only looking at states on our maps.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mwd }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"Minimum Wage Data.csv"}\NormalTok{)}
+\NormalTok{mwd }\OtherTok{=}\NormalTok{ mwd }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(State }\SpecialCharTok{!=} \StringTok{"Puerto Rico"}\NormalTok{)}
+\NormalTok{mwd }\OtherTok{=}\NormalTok{ mwd }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(State }\SpecialCharTok{!=} \StringTok{"U.S. Virgin Islands"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(mwd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Year      State State.Minimum.Wage State.Minimum.Wage.2020.Dollars
+## 1 1968    Alabama            0.00000                            0.00
+## 2 1968     Alaska            2.10000                           15.61
+## 3 1968    Arizona            0.46800                            3.48
+## 4 1968   Arkansas            0.15625                            1.16
+## 5 1968 California            1.65000                           12.26
+## 6 1968   Colorado            1.00000                            7.43
+##   Federal.Minimum.Wage Federal.Minimum.Wage.2020.Dollars Effective.Minimum.Wage
+## 1                 1.15                              8.55                   1.15
+## 2                 1.15                              8.55                   2.10
+## 3                 1.15                              8.55                   1.15
+## 4                 1.15                              8.55                   1.15
+## 5                 1.15                              8.55                   1.65
+## 6                 1.15                              8.55                   1.15
+##   Effective.Minimum.Wage.2020.Dollars CPI.Average
+## 1                                8.55        34.8
+## 2                               15.61        34.8
+## 3                                8.55        34.8
+## 4                                8.55        34.8
+## 5                               12.26        34.8
+## 6                                8.55        34.8
+##   Department.Of.Labor.Uncleaned.Data Department.Of.Labor.Cleaned.Low.Value
+## 1                                ...                               0.00000
+## 2                                2.1                               2.10000
+## 3                18.72 - 26.40/wk(b)                               0.46800
+## 4                        1.25/day(b)                               0.15625
+## 5                            1.65(b)                               1.65000
+## 6                     1.00 - 1.25(b)                               1.00000
+##   Department.Of.Labor.Cleaned.Low.Value.2020.Dollars
+## 1                                               0.00
+## 2                                              15.61
+## 3                                               3.48
+## 4                                               1.16
+## 5                                              12.26
+## 6                                               7.43
+##   Department.Of.Labor.Cleaned.High.Value
+## 1                                0.00000
+## 2                                2.10000
+## 3                                0.66000
+## 4                                0.15625
+## 5                                1.65000
+## 6                                1.25000
+##   Department.Of.Labor.Cleaned.High.Value.2020.Dollars Footnote
+## 1                                                0.00         
+## 2                                               15.61         
+## 3                                                4.91      (b)
+## 4                                                1.16      (b)
+## 5                                               12.26      (b)
+## 6                                                9.29      (b)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{url }\OtherTok{=} \StringTok{"https://www.macrotrends.net/countries/USA/united{-}states/inflation{-}rate{-}cpi"}
+\NormalTok{html }\OtherTok{\textless{}{-}} \FunctionTok{read\_html}\NormalTok{(url)}
+\NormalTok{tables }\OtherTok{=}\NormalTok{ html }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{html\_table}\NormalTok{(}\AttributeTok{fill =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{rl }\OtherTok{=}\NormalTok{ tables[[}\DecValTok{2}\NormalTok{]]}
+\FunctionTok{names}\NormalTok{(rl)[}\DecValTok{1}\NormalTok{] }\OtherTok{=} \StringTok{"Year"}
+\FunctionTok{names}\NormalTok{(rl)[}\DecValTok{2}\NormalTok{] }\OtherTok{=} \StringTok{"Inflation Rate (\%)"}
+\FunctionTok{names}\NormalTok{(rl)[}\DecValTok{3}\NormalTok{] }\OtherTok{=} \StringTok{"Annual Change"}
+\NormalTok{rl1 }\OtherTok{\textless{}{-}}\NormalTok{ rl[}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{), ]}
+\FunctionTok{head}\NormalTok{(rl1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 3
+##   Year  `Inflation Rate (%)` `Annual Change`
+##   <chr> <chr>                <chr>          
+## 1 2020  1.23%                -0.58%         
+## 2 2019  1.81%                -0.63%         
+## 3 2018  2.44%                0.31%          
+## 4 2017  2.13%                0.87%          
+## 5 2016  1.26%                1.14%          
+## 6 2015  0.12%                -1.50%
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(mwd)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    2756 obs. of  15 variables:
+##  $ Year                                               : int  1968 1968 1968 1968 1968 1968 1968 1968 1968 1968 ...
+##  $ State                                              : chr  "Alabama" "Alaska" "Arizona" "Arkansas" ...
+##  $ State.Minimum.Wage                                 : num  0 2.1 0.468 0.156 1.65 ...
+##  $ State.Minimum.Wage.2020.Dollars                    : num  0 15.61 3.48 1.16 12.26 ...
+##  $ Federal.Minimum.Wage                               : num  1.15 1.15 1.15 1.15 1.15 1.15 1.15 1.15 1.15 1.15 ...
+##  $ Federal.Minimum.Wage.2020.Dollars                  : num  8.55 8.55 8.55 8.55 8.55 8.55 8.55 8.55 8.55 8.55 ...
+##  $ Effective.Minimum.Wage                             : num  1.15 2.1 1.15 1.15 1.65 1.15 1.4 1.25 1.25 1.15 ...
+##  $ Effective.Minimum.Wage.2020.Dollars                : num  8.55 15.61 8.55 8.55 12.26 ...
+##  $ CPI.Average                                        : num  34.8 34.8 34.8 34.8 34.8 34.8 34.8 34.8 34.8 34.8 ...
+##  $ Department.Of.Labor.Uncleaned.Data                 : chr  "..." "2.1" "18.72 - 26.40/wk(b)" "1.25/day(b)" ...
+##  $ Department.Of.Labor.Cleaned.Low.Value              : num  0 2.1 0.468 0.156 1.65 ...
+##  $ Department.Of.Labor.Cleaned.Low.Value.2020.Dollars : num  0 15.61 3.48 1.16 12.26 ...
+##  $ Department.Of.Labor.Cleaned.High.Value             : num  0 2.1 0.66 0.156 1.65 ...
+##  $ Department.Of.Labor.Cleaned.High.Value.2020.Dollars: num  0 15.61 4.91 1.16 12.26 ...
+##  $ Footnote                                           : chr  "" "" "(b)" "(b)" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(rl1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [61 x 3] (S3: tbl_df/tbl/data.frame)
+##  $ Year              : chr [1:61] "2020" "2019" "2018" "2017" ...
+##  $ Inflation Rate (%): chr [1:61] "1.23%" "1.81%" "2.44%" "2.13%" ...
+##  $ Annual Change     : chr [1:61] "-0.58%" "-0.63%" "0.31%" "0.87%" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rl2 }\OtherTok{=}\NormalTok{ rl1 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Inflation Rate (\%)}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{parse\_number}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Inflation Rate (\%)}\StringTok{\textasciigrave{}}\NormalTok{), }
+               \StringTok{\textasciigrave{}}\AttributeTok{Annual Change}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{parse\_number}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Annual Change}\StringTok{\textasciigrave{}}\NormalTok{), }
+               \AttributeTok{Year =} \FunctionTok{as.factor}\NormalTok{(Year))}
+\NormalTok{mwd }\OtherTok{=}\NormalTok{ mwd }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Year =} \FunctionTok{as.factor}\NormalTok{(Year))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{the-average-minimum-wage-of-every-state-through-out-the-years}{%
+\subsection{The average minimum wage of every state through out the
+years}\label{the-average-minimum-wage-of-every-state-through-out-the-years}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mwd.state }\OtherTok{=}\NormalTok{ mwd }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(State) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m.state =} \FunctionTok{mean}\NormalTok{(State.Minimum.Wage.}\FloatTok{2020.}\NormalTok{Dollars, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(m.state))}
+
+\NormalTok{mwd.state }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ State)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{weight =}\NormalTok{ m.state)) }\SpecialCharTok{+} 
+  \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"State Minimum Wage"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final-project_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\hypertarget{the-average-minimum-wage-through-out-the-years}{%
+\subsection{The average minimum wage through out the
+years}\label{the-average-minimum-wage-through-out-the-years}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mwd.year }\OtherTok{=}\NormalTok{ mwd }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(Year) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m.year =} \FunctionTok{mean}\NormalTok{(State.Minimum.Wage, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }
+            \AttributeTok{m.year.2020 =} \FunctionTok{mean}\NormalTok{(State.Minimum.Wage.}\FloatTok{2020.}\NormalTok{Dollars, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{))}
+
+\NormalTok{mwd.year }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{weight =}\NormalTok{ m.year)) }\SpecialCharTok{+} 
+  \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"State Minimum Wage"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final-project_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mwd.year }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{weight =}\NormalTok{ m.year}\FloatTok{.2020}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"State Minimum Wage in 2020 Dollars"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final-project_files/figure-latex/unnamed-chunk-4-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mwd.enforced }\OtherTok{=}\NormalTok{ mwd }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(State) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m.high =} \FunctionTok{mean}\NormalTok{(Department.Of.Labor.Cleaned.High.Value.}\FloatTok{2020.}\NormalTok{Dollars, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }
+            \AttributeTok{m.low =} \FunctionTok{mean}\NormalTok{(Department.Of.Labor.Cleaned.Low.Value.}\FloatTok{2020.}\NormalTok{Dollars, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{))}
+
+\FunctionTok{head}\NormalTok{(mwd.enforced)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 3
+##   State      m.high m.low
+##   <chr>       <dbl> <dbl>
+## 1 Alabama      0     0   
+## 2 Alaska       9.92  9.92
+## 3 Arizona      3.10  2.92
+## 4 Arkansas     7.14  7.14
+## 5 California   9.10  9.10
+## 6 Colorado     7.18  6.88
+\end{verbatim}
+
+\#Maps
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{states }\OtherTok{\textless{}{-}} \FunctionTok{map\_data}\NormalTok{(}\StringTok{"state"}\NormalTok{)}
+
+\NormalTok{mwd2 }\OtherTok{=}\NormalTok{ mwd}
+\NormalTok{mwd2}\SpecialCharTok{$}\NormalTok{region }\OtherTok{=} \FunctionTok{tolower}\NormalTok{(mwd2}\SpecialCharTok{$}\NormalTok{State)}
+
+\NormalTok{mwd2 }\OtherTok{=}\NormalTok{ mwd2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(State }\SpecialCharTok{!=} \StringTok{"hawaii"}\NormalTok{, State }\SpecialCharTok{!=} \StringTok{"alaska"}\NormalTok{)}
+
+\NormalTok{mwd.map2020 }\OtherTok{=}\NormalTok{ mwd2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2020}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{left\_join}\NormalTok{(states, }\AttributeTok{by=}\StringTok{"region"}\NormalTok{)}
+
+\NormalTok{mwd.map1968 }\OtherTok{=}\NormalTok{ mwd2 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{1968}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{left\_join}\NormalTok{(states, }\AttributeTok{by=}\StringTok{"region"}\NormalTok{)}
+
+\NormalTok{mwd.map2020 }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ long, }\AttributeTok{y =}\NormalTok{ lat, }\AttributeTok{fill=}\NormalTok{State.Minimum.Wage)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_polygon}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{group=}\NormalTok{group)) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_gradientn}\NormalTok{(}\AttributeTok{colors=}\FunctionTok{rainbow}\NormalTok{(}\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final-project_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mwd.map1968 }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ long, }\AttributeTok{y =}\NormalTok{ lat, }\AttributeTok{fill=}\NormalTok{State.Minimum.Wage)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_polygon}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{group=}\NormalTok{group)) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_gradientn}\NormalTok{(}\AttributeTok{colors=}\FunctionTok{rainbow}\NormalTok{(}\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final-project_files/figure-latex/unnamed-chunk-6-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mwd.year }\OtherTok{=}\NormalTok{ mwd }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(State.Minimum.Wage }\SpecialCharTok{!=} \DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(Year) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m.wage =} \FunctionTok{mean}\NormalTok{(State.Minimum.Wage, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }\AttributeTok{fed.wage =} \FunctionTok{mean}\NormalTok{(Federal.Minimum.Wage, }\AttributeTok{na.rm=} \ConstantTok{TRUE}\NormalTok{))}
+
+\CommentTok{\#mwd.year \%\textgreater{}\% ggplot(aes(x=Year, y=m.wage)) + geom\_line()}
+
+\NormalTok{rl1 }\OtherTok{=}\NormalTok{ rl }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{\textgreater{}} \DecValTok{1967}\NormalTok{) }
+\NormalTok{rl1}\SpecialCharTok{$}\NormalTok{Year }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{(rl1}\SpecialCharTok{$}\NormalTok{Year)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: NAs introduced by coercion
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mwd.year}\SpecialCharTok{$}\NormalTok{Year }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{(mwd.year}\SpecialCharTok{$}\NormalTok{Year)}
+\NormalTok{wage.with.inflation }\OtherTok{=}\NormalTok{ mwd.year }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{left\_join}\NormalTok{(rl1, }\AttributeTok{by=}\StringTok{"Year"}\NormalTok{)}
+
+\CommentTok{\#wage.with.inflation[\textquotesingle{}ExpectedWage\textquotesingle{}] = c()}
+
+\NormalTok{wage.with.inflation}\SpecialCharTok{$}\NormalTok{ExpectedWage }\OtherTok{=}\NormalTok{ wage.with.inflation}\SpecialCharTok{$}\NormalTok{m.wage[}\DecValTok{1}\NormalTok{]}
+
+\ControlFlowTok{for}\NormalTok{ (x }\ControlFlowTok{in} \DecValTok{2}\SpecialCharTok{:}\DecValTok{53}\NormalTok{) \{}
+\NormalTok{  wage.with.inflation}\SpecialCharTok{$}\NormalTok{ExpectedWage[x] }\OtherTok{=}\NormalTok{ wage.with.inflation}\SpecialCharTok{$}\NormalTok{ExpectedWage[x}\DecValTok{{-}1}\NormalTok{] }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+} \FunctionTok{parse\_number}\NormalTok{(wage.with.inflation}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{Inflation Rate (\%)}\StringTok{\textasciigrave{}}\NormalTok{[x]) }\SpecialCharTok{/} \DecValTok{100}\NormalTok{)}
+\NormalTok{\}}
+
+
+\FunctionTok{ggplot}\NormalTok{(wage.with.inflation, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year, }\AttributeTok{group=}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ ExpectedWage, }\AttributeTok{color =} \StringTok{"Expected Wage"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 52 row(s) containing missing values (geom_path).
+\end{verbatim}
+
+\begin{verbatim}
+## geom_path: Each group consists of only one observation. Do you need to adjust
+## the group aesthetic?
+\end{verbatim}
+
+\includegraphics{final-project_files/figure-latex/unnamed-chunk-6-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(wage.with.inflation, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ fed.wage, }\AttributeTok{colour =} \StringTok{"fed.wage"}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ ExpectedWage, }\AttributeTok{color =} \StringTok{"Expected Wage"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 52 row(s) containing missing values (geom_path).
+\end{verbatim}
+
+\begin{verbatim}
+## geom_path: Each group consists of only one observation. Do you need to adjust
+## the group aesthetic?
+\end{verbatim}
+
+\includegraphics{final-project_files/figure-latex/unnamed-chunk-6-4.pdf}
+
+\end{document}
